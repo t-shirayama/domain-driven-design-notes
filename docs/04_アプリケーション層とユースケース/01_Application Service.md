@@ -8,20 +8,17 @@ Application Service に業務判断を置きすぎると、ドメインモデル
 sequenceDiagram
   participant C as Controller
   participant U as UseCase
-  participant R as IOrderRepository
-  participant I as EfOrderRepository
+  participant R as IOrderRepository / EfOrderRepository
   participant D as Database
 
   C->>U: Execute(command)
   U->>R: GetAsync(orderId)
-  R->>I: interface 経由
-  I->>D: EF Core query
-  D-->>I: row data
-  I-->>U: Order
+  R->>D: EF Core query
+  D-->>R: row data
+  R-->>U: Order
   U->>U: order.Confirm()
   U->>R: SaveAsync(order)
-  R->>I: interface 経由
-  I->>D: SaveChanges
+  R->>D: SaveChanges
   U-->>C: result
 ```
 

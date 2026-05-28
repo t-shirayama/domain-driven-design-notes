@@ -7,12 +7,16 @@ flowchart LR
   Command[Command]
   UseCase[UseCase]
   Aggregate[Aggregate]
+  Event[Domain Event]
+  Projection[Projection]
   ReadModel[Read Model]
   Query[Query]
 
   Command --> UseCase
   UseCase --> Aggregate
-  Aggregate --> ReadModel
+  Aggregate --> Event
+  Event --> Projection
+  Projection --> ReadModel
   Query --> ReadModel
 ```
 

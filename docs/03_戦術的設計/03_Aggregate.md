@@ -26,7 +26,9 @@ flowchart TB
 public sealed class Order
 {
     private readonly List<OrderLine> _lines = [];
+
     public IReadOnlyCollection<OrderLine> Lines => _lines;
+    public OrderStatus Status { get; private set; } = OrderStatus.Draft;
 
     public void AddLine(ProductId productId, Money unitPrice, int quantity)
     {
