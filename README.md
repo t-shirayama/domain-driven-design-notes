@@ -13,6 +13,7 @@
 - Repository、ORM との距離、Infrastructure への依存分離
 - Domain Event と Integration Event
 - .NET/C# での小さな実装例
+- よくある迷いどころとアンチパターン
 
 ## ローカルで動かす
 
@@ -69,6 +70,19 @@ docs/
     02_DDD が向いている場面.md
     03_このリポジトリで扱う範囲.md
     04_参考サイト.md
+  02_戦略的設計/
+    01_ユビキタス言語.md
+    02_境界づけられたコンテキスト.md
+    03_コンテキストマップ.md
+    04_腐敗防止層.md
+    05_参考サイト.md
+  08_DotNet での実装例/
+    01_小さな注文モデル.md
+    02_Entity と Value Object の実装.md
+    03_Aggregate の実装.md
+    04_Application Service の実装.md
+    05_Repository Interface と EF Core.md
+    06_参考サイト.md
 ```
 
 基本ルール:
@@ -86,6 +100,7 @@ docs/
 - `mermaid` コードブロックは図として描画します。
 - Markdown 内の外部リンクは別タブで開きます。
 - 各ノートには直接リンクできる `Link` が表示されます。
+- 全体像の draw.io 図は `public/ddd-overview.drawio` にあります。diagrams.net に読み込むと編集できます。
 
 ## 公開
 
