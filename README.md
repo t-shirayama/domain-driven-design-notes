@@ -77,7 +77,7 @@ docs/
     03_コンテキストマップ.md
     04_腐敗防止層.md
     05_参考サイト.md
-  08_DotNet での実装例/
+  08_ASP.NET Core での実装例/
     01_小さな注文モデル.md
     02_Entity と Value Object の実装.md
     03_Aggregate の実装.md
@@ -96,6 +96,19 @@ docs/
     03_用語の発見.md
     04_モデルの見直し方.md
     05_参考サイト.md
+  12_Aggregate 設計/
+    01_整合性境界.md
+    02_トランザクション境界.md
+    03_Aggregate 間参照.md
+    04_結果整合性.md
+    05_参考サイト.md
+  13_実践パターン/
+    01_Specification.md
+    02_Factory.md
+    03_CQRS.md
+    04_Outbox Pattern.md
+    05_Saga と Process Manager.md
+    06_参考サイト.md
 ```
 
 基本ルール:
