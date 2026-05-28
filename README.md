@@ -1,14 +1,18 @@
-# GitHub Pages Notes Template
+# Domain-Driven Design Notes
 
-React / Vite で `docs/` 配下の Markdown を読み込み、GitHub Pages に公開するための学習メモ用テンプレートです。
+ドメイン駆動設計の概念と .NET/C# での実装パターンを整理する学習メモです。
 
-## テンプレートとして使う
+`docs/` 配下の Markdown を React / Vite で読み込み、GitHub Pages に公開します。
 
-1. このリポジトリの Settings で **Template repository** を有効にします。
-2. GitHub の **Use this template** から新しい notes リポジトリを作成します。
-3. 新しいリポジトリで `site.config.ts` を編集します。
-4. Repository Settings の Pages で Source を **GitHub Actions** に設定します。
-5. `docs/NN_章タイトル/NN_本文タイトル.md` の形式で Markdown を追加します。
+## このリポジトリで扱うこと
+
+- DDD の目的と向いている場面
+- ユビキタス言語、境界づけられたコンテキスト、コンテキストマップ
+- Entity、Value Object、Aggregate、Domain Service
+- Application Service、DTO、トランザクション境界
+- Repository、ORM との距離、Infrastructure への依存分離
+- Domain Event と Integration Event
+- .NET/C# での小さな実装例
 
 ## ローカルで動かす
 
@@ -60,10 +64,11 @@ npm run preview
 
 ```text
 docs/
-  01_概要/
-    01_概要.md
-    02_基本.md
-    99_参考サイト.md
+  01_DDD の全体像/
+    01_DDD とは何か.md
+    02_DDD が向いている場面.md
+    03_このリポジトリで扱う範囲.md
+    04_参考サイト.md
 ```
 
 基本ルール:
