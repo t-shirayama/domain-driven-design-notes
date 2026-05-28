@@ -14,6 +14,7 @@
 - Domain Event と Integration Event
 - .NET/C# での小さな実装例
 - よくある迷いどころとアンチパターン
+- Subdomain、Context Map の関係パターン、Event Storming、Aggregate 設計、CQRS、Outbox Pattern
 
 ## ローカルで動かす
 
@@ -83,6 +84,18 @@ docs/
     04_Application Service の実装.md
     05_Repository Interface と EF Core.md
     06_参考サイト.md
+  10_戦略的設計の詳細/
+    01_Subdomain と Core Domain.md
+    02_ドメインの蒸留.md
+    03_Context Map の関係パターン.md
+    04_Big Ball of Mud.md
+    05_参考サイト.md
+  11_モデリング手法/
+    01_Event Storming.md
+    02_業務ヒアリング.md
+    03_用語の発見.md
+    04_モデルの見直し方.md
+    05_参考サイト.md
 ```
 
 基本ルール:
