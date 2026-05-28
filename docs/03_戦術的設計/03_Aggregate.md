@@ -4,6 +4,24 @@ Aggregate は、一貫性を守る単位です。複数の Entity や Value Obje
 
 注文と注文明細を考える場合、合計金額、明細数、注文状態などのルールを注文全体で守りたいなら `Order` を Aggregate Root にします。
 
+```mermaid
+flowchart TB
+  subgraph OrderAggregate[Order Aggregate]
+    Order[Order / Aggregate Root]
+    Line1[OrderLine]
+    Line2[OrderLine]
+    Total[Money]
+  end
+
+  Application[Application Service] --> Order
+  Order --> Line1
+  Order --> Line2
+  Order --> Total
+
+  Application -. 直接操作しない .-> Line1
+  Application -. 直接操作しない .-> Line2
+```
+
 ```csharp
 public sealed class Order
 {

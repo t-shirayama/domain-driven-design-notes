@@ -10,6 +10,29 @@ public interface IOrderRepository
 }
 ```
 
+```mermaid
+classDiagram
+  class ConfirmOrderUseCase {
+    -IOrderRepository orders
+    +ExecuteAsync(orderId, ct)
+  }
+
+  class IOrderRepository {
+    <<interface>>
+    +GetAsync(id, ct)
+    +SaveAsync(order, ct)
+  }
+
+  class EfOrderRepository {
+    -OrderingDbContext db
+    +GetAsync(id, ct)
+    +SaveAsync(order, ct)
+  }
+
+  ConfirmOrderUseCase --> IOrderRepository
+  EfOrderRepository ..|> IOrderRepository
+```
+
 Repository はテーブルごとではなく、Aggregate Root ごとに考えます。`OrderLineRepository` のように、Aggregate 内部の Entity を直接保存する Repository は境界を壊しやすくなります。
 
 検索条件が複雑な一覧表示では、Repository ではなく Query Service や Read Model を分けることもあります。

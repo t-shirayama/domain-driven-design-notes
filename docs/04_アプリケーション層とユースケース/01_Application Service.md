@@ -4,6 +4,27 @@ Application Service は、ユースケースの進行を担当します。入力
 
 Application Service に業務判断を置きすぎると、ドメインモデルはデータ構造だけになります。判断はドメインモデルへ寄せ、Application Service は流れを表す程度にします。
 
+```mermaid
+sequenceDiagram
+  participant C as Controller
+  participant U as UseCase
+  participant R as IOrderRepository
+  participant I as EfOrderRepository
+  participant D as Database
+
+  C->>U: Execute(command)
+  U->>R: GetAsync(orderId)
+  R->>I: interface 経由
+  I->>D: EF Core query
+  D-->>I: row data
+  I-->>U: Order
+  U->>U: order.Confirm()
+  U->>R: SaveAsync(order)
+  R->>I: interface 経由
+  I->>D: SaveChanges
+  U-->>C: result
+```
+
 ```csharp
 public sealed class ConfirmOrderUseCase(IOrderRepository orders)
 {

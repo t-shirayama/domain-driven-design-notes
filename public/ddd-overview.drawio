@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2026-05-28T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="ddd-overview" name="DDD Overview">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Domain-Driven Design Overview" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="315" y="30" width="540" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="strategic" value="戦略的設計&lt;br&gt;Ubiquitous Language&lt;br&gt;Bounded Context&lt;br&gt;Context Map" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef6ff;strokeColor=#2563eb;fontSize=14;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="250" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="domain" value="Domain&lt;br&gt;Entity&lt;br&gt;Value Object&lt;br&gt;Aggregate&lt;br&gt;Domain Service&lt;br&gt;Domain Event" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecfdf3;strokeColor=#16a34a;fontSize=14;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="150" width="250" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="application" value="Application&lt;br&gt;UseCase&lt;br&gt;Command / DTO&lt;br&gt;Transaction Boundary&lt;br&gt;Repository Interface" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;fontSize=14;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="410" width="250" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="infrastructure" value="Infrastructure&lt;br&gt;EF Core&lt;br&gt;Repository Implementation&lt;br&gt;External API&lt;br&gt;Message Broker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#64748b;fontSize=14;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="410" width="250" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation" value="Presentation&lt;br&gt;ASP.NET Core API&lt;br&gt;Controller / Endpoint&lt;br&gt;Request / Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#7c3aed;fontSize=14;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="410" width="250" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="test" value="Tests&lt;br&gt;Domain Unit Test&lt;br&gt;Application Test&lt;br&gt;Infrastructure Integration Test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#dc2626;fontSize=14;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="650" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-strategy-domain" value="言葉と境界をモデルへ反映" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;fontSize=12;" edge="1" parent="1" source="strategic" target="domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-presentation-app" value="Command / Query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7c3aed;fontSize=12;" edge="1" parent="1" source="presentation" target="application">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-app-domain" value="業務判断を呼ぶ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#ea580c;fontSize=12;" edge="1" parent="1" source="application" target="domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-infra-app" value="抽象を実装" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;fontSize=12;" edge="1" parent="1" source="infrastructure" target="application">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-tests" value="責務ごとに検証" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;fontSize=12;" edge="1" parent="1" source="test" target="domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
